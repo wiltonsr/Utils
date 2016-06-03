@@ -8,6 +8,7 @@
 PS1="[\$?][\[$(tput sgr0)\]\[\033[38;5;10m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\]]\w \$\[$(tput sgr0)\] "
 alias uri_tep='cd /home/wilton/Dropbox/UnB/TEP/URI/Iniciante/'
 alias backup_dados='cd /run/media/wilton/Backup'
+alias is-on-gpu='cat /proc/acpi/bbswitch'
 alias ls='ls --color=auto'
 alias fixsteam1='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
 alias fixsteam2='find ~/.local/share/Steam/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
