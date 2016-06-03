@@ -1,0 +1,98 @@
+alignment top_right
+background yes
+border_width 2
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color black
+double_buffer yes
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades yes
+gap_x 25
+gap_y 50
+maximum_width 225
+maximum_size 225
+minimum_size 10
+max_port_monitor_connections 64
+max_specials 512
+max_user_text 16384
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+#wm_class_name Conky
+own_window_colour dimgray
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type desktop
+own_window yes
+stippled_borders 2
+update_interval 1
+update_interval_on_battery = 1
+uppercase no
+use_spacer yes
+use_xft yes
+xftalpha 0.8
+xftfont arial:size=9
+
+TEXT
+${color #FFFFFF}$stippled_hr
+${font arial:size=6}
+${color #FFFFFF}${font Arial Black:bold:size=32}${alignc}${time %H:%M:%S}${font}${color}
+${font Arial Black:size=10}${alignc}${time %A}, ${time %e} de ${time %B} de ${time %G}${font}
+${color #FFFFFF}$stippled_hr
+${color #FFFFFF}${font arial:bold:size=12}Bateria: ${color #FFFFFF}${font arial:size=10} ${battery_percent BAT0}% - $battery_time - ${acpitemp}ºC
+${battery_bar}
+${color #FFFFFF}$stippled_hr
+${color #FFFFFF}${font arial:bold:size=12}Sistema: ${color #FFFFFF}${font arial:size=10}Ligado há:$color $uptime
+${color #FFFFFF}${font arial:size=10}
+${color #FFFFFF}CPU 0(${freq}mhz):${alignr}$color ${cpu cpu1}%
+${color #FFFFFF}${cpubar cpu1}
+${color #FFFFFF}CPU 1(${freq}mhz):${alignr}$color ${cpu cpu2}%
+${color #FFFFFF}${cpubar cpu2}
+${color #FFFFFF}CPU 2(${freq}mhz):${alignr}$color ${cpu cpu3}%
+${color #FFFFFF}${cpubar cpu3}
+${color #FFFFFF}CPU 3(${freq}mhz):${alignr}$color ${cpu cpu4}%
+${color #FFFFFF}${cpubar cpu4}
+${color #FFFFFF}$stippled_hr
+${color #FFFFFF}Uso de RAM:${alignr}$color $mem${color #FFFFFF}/${color}$memmax - $memperc%
+${color #FFFFFF}$membar
+${color #FFFFFF}Uso de Swap:${alignr}$color $swap${color #FFFFFF}/${color}$swapmax - $swapperc%
+${color #FFFFFF}${swapbar}
+${color #FFFFFF}$stippled_hr
+${color #FFFFFF}${font arial:bold:size=12}Sistema de Arquivos:
+${color #FFFFFF}${font arial:size=9}/ ${alignr}$color${fs_used /}/${fs_size /}
+${color #FFFFFF}${fs_bar /}
+${color #FFFFFF}$stippled_hr
+${color #FFFFFF}${font arial:bold:size=12}Processos:
+${color #FFFFFF}${font arial:size=9}Nome ${alignr}PID    CPU MEM
+$color ${top name 1} ${alignr}${top pid 1} ${top cpu 1} ${top mem 1}
+$color ${top name 2} ${alignr}${top pid 2} ${top cpu 2} ${top mem 2}
+$color ${top name 3} ${alignr}${top pid 3} ${top cpu 3} ${top mem 3}
+$color ${top name 4} ${alignr}${top pid 4} ${top cpu 4} ${top mem 4}
+$color ${top name 5} ${alignr}${top pid 5} ${top cpu 5} ${top mem 5}
+${color #FFFFFF}Total de Processos:$color ${processes}
+${color #FFFFFF}$stippled_hr
+${color #FFFFFF}${font arial:bold:size=12}Rede:${font arial:size=9}${color #FFFFFF}
+${color #FFFFFF}Net Down:$color ${downspeed wlan0} k/s
+${color #FFFFFF}${downspeedgraph wlan0 FFFFFF FFFFFF}
+${color #FFFFFF}Net Up:$color ${upspeed wlan0} k/s
+${color #FFFFFF}${upspeedgraph wlan0 FFFFFF FFFFFF}
+${color #FFFFFF}$stippled_hr
+${font Open Sans:bold:size=10}Cabeada $alignr${wireless_essid eth0}
+${color #FFFFFF}${font} IPv4 ${alignr}$color ${addr eth0}
+${color #FFFFFF}${font} Down ${alignr}$color ${downspeed eth0}
+${color #FFFFFF}${font} Up ${alignr}$color ${upspeed eth0}
+${color #FFFFFF}${font}Total down ${alignr}$color ${totaldown eth0}
+${color #FFFFFF}${font}Total up ${alignr}$color ${totalup eth0}
+${color #FFFFFF}$stippled_hr
+${color #FFFFFF}${font Open Sans:bold:size=10}Wireless $alignr SSID:  ${wireless_essid wlan0}
+${color #FFFFFF}${font} IPv4 ${alignr}$color ${addr wlan0}
+${color #FFFFFF}${font} Public IP ${alignr}$color ${execi 3600 curl ifconfig.me | tail }
+${color #FFFFFF}${font} Sinal: ${alignr}$color ${wireless_link_qual_perc wlan0}%
+${color #FFFFFF}${font} Down ${alignr}$color ${downspeed wlan0}
+${color #FFFFFF}${font} Up ${alignr}$color ${upspeed wlan0}
+${color #FFFFFF}${font} Total down ${alignr}$color ${totaldown wlan0}
+${color #FFFFFF}${font} Total up ${alignr}$color ${totalup wlan0}
+${color #FFFFFF}$stippled_hr
