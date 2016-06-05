@@ -35,6 +35,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'powerline/powerline'
 
+" A pack of colorschemes for vim.
+Plugin 'flazz/vim-colorschemes'
+
 " This plugin causes all trailing whitespace to be highlighted in red.
 Plugin 'bronson/vim-trailing-whitespace'
 
