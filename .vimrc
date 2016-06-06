@@ -33,6 +33,9 @@ Plugin 'tpope/vim-fugitive'
 " A code-completion engine for Vim
 Plugin 'Valloric/YouCompleteMe'
 
+" A plugin to auto close brackets
+Plugin 'jiangmiao/auto-pairs'
+
 " Lean & mean status/tabline for vim that's light as air.
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -105,9 +108,6 @@ nnoremap H gT
 nnoremap L gt
 
 " AutoClose
-imap { {}<left>
-imap ( ()<left>
-imap [ []<left>
 imap < <><left>
 
 " Move lines like in atom
