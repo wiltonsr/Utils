@@ -31,7 +31,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 
 " A code-completion engine for Vim
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 " A plugin to auto close brackets
 Plugin 'jiangmiao/auto-pairs'
@@ -83,6 +83,9 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Visual autocomplete for command menu
 set wildmenu
+
+" Make backspace work like most other apps
+set backspace=2
 
 " Set syntax
 syntax on
@@ -157,10 +160,11 @@ set incsearch
 set hlsearch
 
 " Option for tab
-set softtabstop=2
+set tabstop=4
 set expandtab
-set tabstop=2
-set tabstop=2 softtabstop=0 noexpandtab shiftwidth=2 smarttab
+set softtabstop=4
+set shiftwidth=4
+set smarttab
 
 " Colors configs
 set background=dark
