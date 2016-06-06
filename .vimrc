@@ -30,7 +30,10 @@ Plugin 'VundleVim/Vundle.vim'
 " A plugin to display the git options
 Plugin 'tpope/vim-fugitive'
 
-"	Lean & mean status/tabline for vim that's light as air.
+" A code-completion engine for Vim
+Plugin 'Valloric/YouCompleteMe'
+
+" Lean & mean status/tabline for vim that's light as air.
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'powerline/powerline'
