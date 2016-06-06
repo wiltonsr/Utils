@@ -5,10 +5,14 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Check the size of window at each command and resize when necessary.
+shopt -s checkwinsize
+
 PS1="[\$?][\[$(tput sgr0)\]\[\033[38;5;10m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\]]\w \$\[$(tput sgr0)\] "
 
 #----------------ALIAS----------------#
 alias uri_tep='cd /home/wilton/Dropbox/UnB/TEP/URI/Iniciante/'
+alias workspace='cd /home/wilton/Workspace'
 alias gpu-is-on='cat /proc/acpi/bbswitch'
 alias ls='ls --color=auto'
 alias fixsteam1='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
