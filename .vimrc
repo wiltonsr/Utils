@@ -36,6 +36,9 @@ Plugin 'tpope/vim-fugitive'
 " A plugin to auto close brackets
 Plugin 'jiangmiao/auto-pairs'
 
+" A plugin to auto complete based in cache of words in buffer.
+Plugin 'Shougo/neocomplete.vim'
+
 " Lean & mean status/tabline for vim that's light as air.
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
