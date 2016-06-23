@@ -51,6 +51,8 @@ Plugin 'flazz/vim-colorschemes'
 " This plugin causes all trailing whitespace to be highlighted in red.
 Plugin 'bronson/vim-trailing-whitespace'
 
+" A plugin that provides support for writing LaTeX documents.
+Plugin 'lervag/vimtex'
 " A simple, easy-to-use Vim alignment plugin.
 "	Plugin 'junegunn/vim-easy-align'
 
