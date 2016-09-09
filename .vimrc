@@ -27,18 +27,32 @@ call vundle#begin()
 " Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" A file-type sensible comments for Vim.
+Plugin 'tomtom/tcomment_vim'
+
 " A plugin to display the git options
 Plugin 'tpope/vim-fugitive'
 
 " A code-completion engine for Vim
-"Plugin 'Valloric/YouCompleteMe'
-let g:ycm_autoclose_preview_window_after_completion = 1
+" Plugin 'Valloric/YouCompleteMe'
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_global_ycm_extra_conf ='~/.ycm_extra_conf.py'
+let g:loaded_youcompleteme = 1
+
+" a code-completion engine for c/c++
+"Plugin 'Rip-Rip/clang_complete'
+"let g:clang_user_options='|| exit 0'
 
 " A plugin to auto close brackets
 Plugin 'jiangmiao/auto-pairs'
 
 " A plugin to auto complete based in cache of words in buffer.
 Plugin 'Shougo/neocomplete.vim'
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+
+" A plugin to see the colors directly in vim
+Plugin 'gorodinskiy/vim-coloresque'
 
 " Lean & mean status/tabline for vim that's light as air.
 Plugin 'vim-airline/vim-airline'
@@ -57,7 +71,7 @@ Plugin 'lervag/vimtex'
 "	Plugin 'junegunn/vim-easy-align'
 
 " Additional vim c++ syntax highlighting.
-"	Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " Syntax checking plugin for Vim.
 Plugin 'scrooloose/syntastic'
@@ -166,15 +180,15 @@ set incsearch
 set hlsearch
 
 " Option for tab
-set tabstop=2
 set expandtab
-set softtabstop=2
+set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set smarttab
 
 " Colors configs
 set background=dark
-colorscheme monokai " Put the monokai.vim file in .vim/color
+colorscheme molokai " Put the monokai.vim file in .vim/color
 set t_Co=256
 
 " Set numbers in lines of file
@@ -183,11 +197,13 @@ set number
 " Highlight matching [{()}]
 set showmatch
 
+" Save with ctrl+s
+
 " Set F2 button to call NerdTree
 map <F2> :NERDTreeToggle<CR>
 
 " Set F3 button to indent all the file
 map <F3> mzgg=G`z
 
-"Remove all trailing whitespace by pressing F5
+"Remove all trailing whitespace by pressing F4
 nnoremap <F4> :let s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=s<Bar><CR>
