@@ -1,0 +1,62 @@
+#Logar na instalação em modo UEFI
+run efivar -l
+#Espera-se que sejam listadas as variáveis de UEFI
+#TO-DO PARTIÇÕES
+loadkeys br-abnt2
+vim /etc/locale.gen
+#Descomentar as linhas en_US.UTF-8 UTF-8 e pt_BR.UTF-8 UTF-8
+locale-gen
+export LANG=pt_BR.UTF-8 UTF-8
+
+mkfs.fat -F32 /dev/<path_to_boot>
+mkfs.ext4 /dev/<path_to_home>
+mkfs.ext4 /dev/<path_to_root>
+
+mount /dev/<path_to_root>
+mkdir /mnt/boot
+mkdir /mnt/home
+mount /dev/<path_to_boot> /mnt/boot
+mount /dev/<path_to_home> /mnt/home
+
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrolist.bkp
+sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.bkp
+rankmirrors -n 6 /etc/pacman.d/mirrorlist.bkp > /etc/pacman.d/mirrorlist
+pacstrap -i /mnt base base-devel
+genfstab -U -p /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+vim /etc/locale.gen
+#Descomentar as linhas en_US.UTF-8 UTF-8 e pt_BR.UTF-8 UTF-8
+locale-gen
+echo LANG=pt_BR.UTF-8 UTF-8 > /etc/locale.conf
+export LANG=pt_BR.UTF-8 UTF-8
+vim /etc/vconsole.conf
+#Inserir
+KEYMAP=br-abnt2
+ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+hwclock --systohc --utc
+echo <computers_name> > /etc/hostname
+#Descomentar multilib
+vim /etc/pacman.conf
+#Adicionar AUR
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+
+passwd
+useradd -m -g users -G wheel,storage,power -s /bin/bash <username>
+passwd <username>
+iplink
+sudo systemctl enable dhcpcd@<internet_device>.service
+EDITOR=vim visudo
+#Descomentar linha do wheel
+pacman -S bash-completion
+bootctl install
+blkid -s PARTUUID -o value /dev/<root_path> > /bot/loader/entries/arch.conf
+vim /bot/loader/entries/arch.conf
+#Adicionar
+title Arch Linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options root=PARTUUID=<UUID_inside_the_file>
+reboot
+#Install drivers and the GUI
