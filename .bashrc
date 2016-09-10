@@ -29,6 +29,10 @@ alias gb="git branch"
 BROWSER=/usr/bin/google-chrome-stable
 EDITOR=vim
 
+#Setting more line to history commands
+HISTSIZE=5000
+HISTFILESIZE=5000
+
 #Set partial history search with up key
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
