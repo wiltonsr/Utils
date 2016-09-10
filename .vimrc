@@ -156,7 +156,12 @@ vnoremap <Down> <NOP>
 vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 
-" Changing CAPS to ESC
+" Show a vertical line on column 80
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 " Changing the directory from temporary files
 set swapfile
