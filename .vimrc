@@ -27,6 +27,10 @@ call vundle#begin()
 " Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" A plugin which allows you to use <Tab> for all your insert completion needs
+Plugin 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " A file-type sensible comments for Vim.
 Plugin 'tomtom/tcomment_vim'
 
@@ -61,6 +65,9 @@ Plugin 'powerline/powerline'
 
 " A pack of colorschemes for vim.
 Plugin 'flazz/vim-colorschemes'
+
+" This plugin provides a start screen for Vim and Neovim.
+Plugin 'mhinz/vim-startify'
 
 " This plugin causes all trailing whitespace to be highlighted in red.
 Plugin 'bronson/vim-trailing-whitespace'
@@ -193,7 +200,7 @@ set smarttab
 
 " Colors configs
 set background=dark
-colorscheme molokai " Put the monokai.vim file in .vim/color
+colorscheme monokai " Put the monokai.vim file in .vim/color
 set t_Co=256
 
 " Set numbers in lines of file
@@ -212,3 +219,41 @@ map <F3> mzgg=G`z
 
 "Remove all trailing whitespace by pressing F4
 nnoremap <F4> :let s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=s<Bar><CR>
+
+let g:startify_custom_header = [
+  \ '  ======================================================',
+  \ '                                _________  __  __',
+  \ '            __                 /\_____   \/\ \/\ `\',
+  \ '   __   __ /\_\    ___ ___     \/____/   /\ \ \ \  \',
+  \ '  /\ \ /\ \\/\ \ /` __` __`\        /   /  \ \ \_\  \__',
+  \ '  \ \ \_/ / \ \ \/\ \/\ \/\ \      /   / __ \ \___   __\',
+  \ '   \ \___/   \ \_\ \_\ \_\ \_\    /\__/ /\_\ \/___/\_\_/',
+  \ '    \/__/     \/_/\/_/\/_/\/_/    \/_/  \/_/      \/_/',
+  \ '',
+  \ '  ======================================================',
+  \ ]
+
+let g:startify_custom_footer = [
+  \ '',
+  \ '  ======================================================',
+  \ '',
+  \ '  Copyleft',
+  \ ]
+
+let g:startify_bookmarks = [
+  \ '~/.vimrc',
+  \ '~/.bashrc',
+  \ '~/Dropbox/UnB',
+  \ '~/Dropbox/UnB/FSO',
+  \ ]
+
+let g:startify_list_order = [
+    \ ['   These are my bookmarks:'],
+    \ 'bookmarks',
+    \ ['   My most recently:'],
+    \ 'files',
+    \ ['   Sessions:'],
+    \ 'sessions',
+    \ ['   Current Dir:'],
+    \ 'dir',
+    \ ]
