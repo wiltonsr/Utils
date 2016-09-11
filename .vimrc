@@ -18,82 +18,83 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+" Keep Plugin commands between plug#begin/end.
+call plug#begin('~/.vim/plugged')
 
-" Keep Plugin commands between vundle#begin/end.
-call vundle#begin()
-
-" Let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Let Plug manager plugins, required
+Plug 'junegunn/vim-plug'
 
 " A plugin which allows you to use <Tab> for all your insert completion needs
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " A file-type sensible comments for Vim.
-Plugin 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 
 " A plugin to display the git options
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " A code-completion engine for Vim
-" Plugin 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 " let g:ycm_autoclose_preview_window_after_completion = 1
 " let g:ycm_global_ycm_extra_conf ='~/.ycm_extra_conf.py'
 let g:loaded_youcompleteme = 1
 
 " a code-completion engine for c/c++
-"Plugin 'Rip-Rip/clang_complete'
+"Plug 'Rip-Rip/clang_complete'
 "let g:clang_user_options='|| exit 0'
 
 " A plugin to auto close brackets
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " A plugin to auto complete based in cache of words in buffer.
-Plugin 'Shougo/neocomplete.vim'
+Plug 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 
 " A plugin to see the colors directly in vim
-Plugin 'gorodinskiy/vim-coloresque'
+Plug 'gorodinskiy/vim-coloresque'
 
 " Lean & mean status/tabline for vim that's light as air.
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'powerline/powerline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'powerline/powerline'
 
 " A pack of colorschemes for vim.
-Plugin 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'
 
 " This plugin provides a start screen for Vim and Neovim.
-Plugin 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 
 " This plugin causes all trailing whitespace to be highlighted in red.
-Plugin 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
 
 " A plugin that provides support for writing LaTeX documents.
-Plugin 'lervag/vimtex'
+" Plug 'lervag/vimtex'
+
+" A much simpler way to use some motions in vim
+Plug 'easymotion/vim-easymotion'
+
 " A simple, easy-to-use Vim alignment plugin.
-"	Plugin 'junegunn/vim-easy-align'
+"	Plug 'junegunn/vim-easy-align'
 
 " Additional vim c++ syntax highlighting.
-Plugin 'octol/vim-cpp-enhanced-highlight'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Syntax checking plugin for Vim.
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " Permit to tab-complete words while typing in a search.
-Plugin 'vim-scripts/SearchComplete'
+Plug 'vim-scripts/SearchComplete'
 
 " The NERD tree allows you to explore your filesystem and to open files and directories.
-Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 " Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-call vundle#end()            " required
+call plug#end() " required
 
 " To ignore plugin indent changes, instead use:
 filetype plugin indent on    " required
