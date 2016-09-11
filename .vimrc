@@ -112,6 +112,9 @@ let g:airline#extensions#tabline#enabled = 1
 " Visual autocomplete for command menu
 set wildmenu
 
+" Automatically read files when they've changed
+set autoread
+
 " Make backspace work like most other apps
 set backspace=2
 
