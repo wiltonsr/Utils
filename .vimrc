@@ -52,7 +52,7 @@ Plug 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 
-" A plugin to see the colors directly in vim
+" A plugin to see the colors directly in vim.
 Plug 'gorodinskiy/vim-coloresque'
 
 " Lean & mean status/tabline for vim that's light as air.
@@ -72,7 +72,7 @@ Plug 'bronson/vim-trailing-whitespace'
 " A plugin that provides support for writing LaTeX documents.
 " Plug 'lervag/vimtex'
 
-" A much simpler way to use some motions in vim
+" A much simpler way to use some motions in vim.
 Plug 'easymotion/vim-easymotion'
 
 " A simple, easy-to-use Vim alignment plugin.
@@ -99,9 +99,9 @@ call plug#end() " required
 " To ignore plugin indent changes, instead use:
 filetype plugin indent on    " required
 
-" Put your non-Plugin stuff after this line
+" Put your non-Plugin stuff after this line.
 
-" Use airline plugin in all windows
+" Use airline plugin in all windows.
 set laststatus=2
 let g:airline_theme='luna'
 let g:airline_powerline_fonts = 1
@@ -109,42 +109,42 @@ let g:airline#extensions#tabline#enabled = 1
 " Configure the minimum number of tabs needed to show the tabline.
 "let g:airline#extensions#tabline#tab_min_count = 2
 
-" Visual autocomplete for command menu
+" Visual autocomplete for command menu.
 set wildmenu
 
-" Automatically read files when they've changed
+" Automatically read files when they've changed.
 set autoread
 
-" Make backspace work like most other apps
+" Make backspace work like most other apps.
 set backspace=2
 
-" Set syntax
+" Set syntax.
 syntax on
 
-" Set autoindent
+" Set autoindent.
 set ai
 
 "	Show (partial) command in the last line of the screen.
 set showcmd
 
-" Set autoindent for C language
+" Set autoindent for C language.
 set cindent
 
-" Use the clipboard from the system in VIM
+" Use the clipboard from the system in VIM.
 set clipboard=unnamedplus
 
-" Highlight current line
+" Highlight current line.
 set cursorline
 set cursorcolumn
 
-" Tab navigation
+" Tab navigation.
 nnoremap H gT
 nnoremap L gt
 
-" AutoClose
+" AutoClose.
 imap < <><left>
 
-" Move lines like in atom
+" Move lines like in atom.
 nnoremap <c-s-j> :m .+1<CR>==
 nnoremap <c-s-k> :m .-2<CR>==
 inoremap <c-s-j> <Esc>:m .+1<CR>==gi
@@ -152,11 +152,11 @@ inoremap <c-s-k> <Esc>:m .-2<CR>==gi
 vnoremap <c-s-j> :m '>+1<CR>gv=gv
 vnoremap <c-s-k> :m '<-2<CR>gv=gv
 
-" Move to beginning/end of line
+" Move to beginning/end of line.
 nnoremap B ^
 nnoremap E $
 
-" Disable arrow keys
+" Disable arrow keys.
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -167,14 +167,14 @@ vnoremap <Down> <NOP>
 vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 
-" Show a vertical line on column 80
+" Show a vertical line on column 80.
 if exists('+colorcolumn')
   set colorcolumn=80
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-" Changing the directory from temporary files
+" Changing the directory from temporary files.
 set swapfile
 set dir=/tmp/
 set backup
@@ -185,43 +185,43 @@ set shiftwidth=2
 " Encoding UTF-8.
 set encoding=utf8
 
-" Set ignorecase and smartcase in search
+" Set ignorecase and smartcase in search.
 set ignorecase
 set smartcase
 
-" Search as characters are entered
+" Search as characters are entered.
 set incsearch
 
-" Highlight matches
+" Highlight matches.
 set hlsearch
 
-" Option for tab
+" Option for tab.
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set smarttab
 
-" Colors configs
+" Colors configs.
 set background=dark
 colorscheme monokai " Put the monokai.vim file in .vim/color
 set t_Co=256
 
-" Set numbers in lines of file
+" Set numbers in lines of file.
 set number
 
-" Highlight matching [{()}]
+" Highlight matching [{()}].
 set showmatch
 
-" Save with ctrl+s
+" Save with ctrl+s.
 
-" Set F2 button to call NerdTree
+" Set F2 button to call NerdTree.
 map <F2> :NERDTreeToggle<CR>
 
-" Set F3 button to indent all the file
+" Set F3 button to indent all the file.
 map <F3> mzgg=G`z
 
-"Remove all trailing whitespace by pressing F4
+"Remove all trailing whitespace by pressing F4.
 nnoremap <F4> :let s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=s<Bar><CR>
 
 let g:startify_custom_header = [
