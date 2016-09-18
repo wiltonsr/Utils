@@ -18,7 +18,7 @@ mkdir /mnt/home
 mount /dev/<path_to_boot> /mnt/boot
 mount /dev/<path_to_home> /mnt/home
 
-cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrolist.bkp
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bkp
 sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.bkp
 rankmirrors -n 6 /etc/pacman.d/mirrorlist.bkp > /etc/pacman.d/mirrorlist
 pacstrap -i /mnt base base-devel
