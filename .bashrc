@@ -25,6 +25,9 @@ alias go="gnome-open"
 alias gs="git status"
 alias gb="git branch"
 
+#Setting to not be disturbed by Ctrl-S ctrl-Q in terminals
+stty -ixon
+
 #Setting de defaults app
 BROWSER=/usr/bin/google-chrome-stable
 EDITOR=vim
