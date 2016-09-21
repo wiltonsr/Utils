@@ -1,19 +1,3 @@
-"        ________ ++     ________
-"       /VVVVVVVV\++++  /VVVVVVVV\
-"       \VVVVVVVV/++++++\VVVVVVVV/
-"        |VVVVVV|++++++++/VVVVV/'
-"        |VVVVVV|++++++/VVVVV/'
-"       +|VVVVVV|++++/VVVVV/'+
-"     +++|VVVVVV|++/VVVVV/'+++++
-"   +++++|VVVVVV|/VVVVV/'+++++++++
-"     +++|VVVVVVVVVVV/'+++++++++
-"       +|VVVVVVVVV/'+++++++++
-"        |VVVVVVV/'+++++++++
-"        |VVVVV/'+++++++++
-"        |VVV/'+++++++++
-"        'V/'   ++++++
-"                 ++
-"
 " Vundle Plugin Manager
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -61,7 +45,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'powerline/powerline'
 
 " A pack of colorschemes for vim.
-Plug 'flazz/vim-colorschemes'
+Plug 'dandorman/vim-colors'
 
 " This plugin provides a start screen for Vim and Neovim.
 Plug 'mhinz/vim-startify'
@@ -82,7 +66,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Syntax checking plugin for Vim.
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 
 " Permit to tab-complete words while typing in a search.
 Plug 'vim-scripts/SearchComplete'
@@ -226,6 +210,21 @@ nnoremap <F4> :let s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=s<Bar><CR>
 
 let g:startify_custom_header = [
   \ '  ======================================================',
+  \ '                  ________ ++     ________',
+  \ '                 /VVVVVVVV\++++  /VVVVVVVV\',
+  \ '                 \VVVVVVVV/++++++\VVVVVVVV/',
+  \ '                  |VVVVVV|++++++++/VVVVV/',
+  \ '                  |VVVVVV|++++++/VVVVV/',
+  \ '                 +|VVVVVV|++++/VVVVV/+',
+  \ '               +++|VVVVVV|++/VVVVV/+++++',
+  \ '             +++++|VVVVVV|/VVVVV/+++++++++',
+  \ '               +++|VVVVVVVVVVV/+++++++++',
+  \ '                 +|VVVVVVVVV/+++++++++',
+  \ '                  |VVVVVVV/+++++++++',
+  \ '                  |VVVVV/+++++++++',
+  \ '                  |VVV/+++++++++',
+  \ '                   V/   ++++++',
+  \ '                           ++',
   \ '                                _________  __  __',
   \ '            __                 /\_____   \/\ \/\ `\',
   \ '   __   __ /\_\    ___ ___     \/____/   /\ \ \ \  \',
