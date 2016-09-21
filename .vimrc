@@ -15,6 +15,9 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " A file-type sensible comments for Vim.
 Plug 'tomtom/tcomment_vim'
 
+" A finder for vim.
+Plug 'ctrlpvim/ctrlp.vim'
+
 " A plugin to display the git options
 Plug 'tpope/vim-fugitive'
 
