@@ -25,6 +25,10 @@ alias suspend="sudo systemctl suspend"
 alias go="gnome-open"
 alias gs="git status"
 alias gb="git branch"
+alias gc="git commit"
+alias gd="git diff"
+alias ga="git add"
+alias gr="git remote -v"
 
 #Setting to not be disturbed by Ctrl-S ctrl-Q in terminals
 stty -ixon
