@@ -28,6 +28,7 @@ alias gb="git branch"
 alias gc="git commit"
 alias gd="git diff"
 alias ga="git add"
+alias gl="git log"
 alias gr="git remote -v"
 
 #Setting to not be disturbed by Ctrl-S ctrl-Q in terminals
@@ -40,6 +41,9 @@ EDITOR=vim
 #Setting more line to history commands
 HISTSIZE=5000
 HISTFILESIZE=5000
+
+#Avoid duplicate entries in history
+export HISTCONTROL=ignoreboth:erasedups
 
 #Set partial history search with up key
 bind '"\e[A": history-search-backward'
