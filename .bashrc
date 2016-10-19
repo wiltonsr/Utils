@@ -22,6 +22,7 @@ alias fixsteam3='find ~/.steam/root/ -name "libgpg-error.so*" -print -delete'
 alias reboot="sudo systemctl reboot"
 alias poweroff="sudo systemctl poweroff"
 alias suspend="sudo systemctl suspend"
+alias turnoff-monitor="xset -display :0.0 dpms force off"
 alias go="gnome-open"
 alias gs="git status"
 alias gb="git branch"
