@@ -11,6 +11,7 @@ shopt -s checkwinsize
 PS1="[\$?][\[$(tput sgr0)\]\[\033[38;5;10m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\]]\w \$\[$(tput sgr0)\] "
 
 #----------------ALIAS----------------#
+alias bd='cd "$OLDPWD"'
 alias go_unb='cd /home/wilton/Dropbox/UnB'
 alias workspace='cd /home/wilton/Workspace'
 alias gpu-is-on='cat /proc/acpi/bbswitch'
