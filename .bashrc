@@ -8,7 +8,20 @@
 # Check the size of window at each command and resize when necessary.
 shopt -s checkwinsize
 
-PS1="[\$?][\[$(tput sgr0)\]\[\033[38;5;10m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\]]\w \$\[$(tput sgr0)\] "
+function my_ps1(){
+    PS1=""
+    local red='\[\e[0;31m\]'
+    local gre='\[\033[38;5;10m\]'
+    local whi='\[\e[0;37m\]'
+    local exit_status="${whi}[$?]"
+    local user_and_host="${whi}[${gre}\u@\h${whi}]"
+    local current_path="${whi}\w"
+    local final_simbol="${whi}\$"
+    local break_line='\n'
+    export PS1+="${exit_status}${user_and_host}${current_path}${break_line}${final_simbol} "
+    # echo $PS1
+}
+my_ps1
 
 #----------------ALIAS----------------#
 alias bd='cd "$OLDPWD"'
