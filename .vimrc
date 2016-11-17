@@ -25,9 +25,9 @@ Plug 'tpope/vim-fugitive'
 " Plug 'Valloric/YouCompleteMe'
 " let g:ycm_autoclose_preview_window_after_completion = 1
 " let g:ycm_global_ycm_extra_conf ='~/.ycm_extra_conf.py'
-let g:loaded_youcompleteme = 1
+" let g:loaded_youcompleteme = 1
 
-" a code-completion engine for c/c++
+" A code-completion engine for c/c++
 "Plug 'Rip-Rip/clang_complete'
 "let g:clang_user_options='|| exit 0'
 
@@ -35,9 +35,9 @@ let g:loaded_youcompleteme = 1
 Plug 'jiangmiao/auto-pairs'
 
 " A plugin to auto complete based in cache of words in buffer.
-Plug 'Shougo/neocomplete.vim'
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
+" Plug 'Shougo/neocomplete.vim'
+" let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#enable_smart_case = 1
 
 " A plugin to see the colors directly in vim.
 Plug 'gorodinskiy/vim-coloresque'
@@ -60,7 +60,7 @@ Plug 'bronson/vim-trailing-whitespace'
 " Plug 'lervag/vimtex'
 
 " A much simpler way to use some motions in vim.
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 
 " A simple, easy-to-use Vim alignment plugin.
 "	Plug 'junegunn/vim-easy-align'
@@ -75,14 +75,13 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-scripts/SearchComplete'
 
 " The NERD tree allows you to explore your filesystem and to open files and directories.
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 " Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end() " required
-
 " To ignore plugin indent changes, instead use:
 filetype plugin indent on    " required
 
@@ -196,6 +195,9 @@ set t_Co=256
 
 " Set numbers in lines of file.
 set number
+
+" Switch between relative and absolute numbers
+map <c-n> :set rnu!<CR>
 
 " Highlight matching [{()}].
 set showmatch
