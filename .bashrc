@@ -8,6 +8,11 @@
 # Check the size of window at each command and resize when necessary.
 shopt -s checkwinsize
 
+# Causes bash to append to history instead of overwriting it so if you start a new terminal, you have old session history
+shopt -s histappend
+PROMPT_COMMAND='history -a'
+
+# My personality PS1 variable
 function my_ps1(){
     PS1=""
     local red='\[\e[0;31m\]'
@@ -23,8 +28,12 @@ function my_ps1(){
 }
 my_ps1
 
+# Ignore case on auto-completion
+if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
+
 #----------------ALIAS----------------#
 alias bd='cd "$OLDPWD"'
+alias htop='sudo htop'
 alias go_unb='cd /home/wilton/Dropbox/UnB'
 alias workspace='cd /home/wilton/Workspace'
 alias gpu-is-on='cat /proc/acpi/bbswitch'
@@ -33,6 +42,7 @@ alias la='ls -Alh'
 alias fixsteam1='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
 alias fixsteam2='find ~/.local/share/Steam/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
 alias fixsteam3='find ~/.steam/root/ -name "libgpg-error.so*" -print -delete'
+alias openports='netstat -nape --inet'
 alias reboot="sudo systemctl reboot"
 alias poweroff="sudo systemctl poweroff"
 alias suspend="sudo systemctl suspend"
@@ -75,7 +85,18 @@ export ANDROID_HOME="/opt/android-sdk"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 export ANDROID_HOME=/opt/android-sdk
+
 #Set the pyenv paths.
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# Color for manpages in less makes manpages a little easier to read
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+export EDITOR=vim
