@@ -62,8 +62,8 @@ EDITOR=vim visudo
 #Descomentar linha do wheel
 pacman -S bash-completion
 bootctl install
-blkid -s PARTUUID -o value /dev/<root_path> > /bot/loader/entries/arch.conf
-vim /bot/loader/entries/arch.conf
+blkid -s PARTUUID -o value /dev/<root_path> > /boot/loader/entries/arch.conf
+vim /boot/loader/entries/arch.conf
 #Adicionar
 title Arch Linux
 linux /vmlinuz-linux
