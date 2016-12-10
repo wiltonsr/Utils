@@ -62,11 +62,13 @@ EDITOR=vim visudo
 #Descomentar linha do wheel
 pacman -S bash-completion
 bootctl install
+pacman -S intel-ucode
 blkid -s PARTUUID -o value /dev/<root_path> > /boot/loader/entries/arch.conf
 vim /boot/loader/entries/arch.conf
 #Adicionar
 title Arch Linux
 linux /vmlinuz-linux
+initrd /intel-ucode.img
 initrd /initramfs-linux.img
 options root=PARTUUID=<UUID_inside_the_file> rw
 reboot
