@@ -1,5 +1,5 @@
 #Logar na instalação em modo UEFI
-run efivar -l
+efivar -l
 #Espera-se que sejam listadas as variáveis de UEFI
 #PARTIÇÕES
 gdisk /dev/sdX
@@ -17,7 +17,7 @@ loadkeys br-abnt2
 vim /etc/locale.gen
 #Descomentar as linhas en_US.UTF-8 UTF-8 e pt_BR.UTF-8 UTF-8
 locale-gen
-export LANG=pt_BR.UTF-8 UTF-8
+export LANG=pt_BR.UTF-8
 
 mkfs.fat -F32 /dev/<path_to_boot>
 mkfs.ext4 /dev/<path_to_home>
@@ -38,8 +38,8 @@ arch-chroot /mnt
 vim /etc/locale.gen
 #Descomentar as linhas en_US.UTF-8 UTF-8 e pt_BR.UTF-8 UTF-8
 locale-gen
-echo LANG=pt_BR.UTF-8 UTF-8 > /etc/locale.conf
-export LANG=pt_BR.UTF-8 UTF-8
+echo LANG=pt_BR.UTF-8 > /etc/locale.conf
+export LANG=pt_BR.UTF-8
 vim /etc/vconsole.conf
 #Inserir
 KEYMAP=br-abnt2
@@ -56,7 +56,7 @@ Server = http://repo.archlinux.fr/$arch
 passwd
 useradd -m -g users -G wheel,storage,power -s /bin/bash <username>
 passwd <username>
-iplink
+ip link
 sudo systemctl enable dhcpcd@<internet_device>.service
 EDITOR=vim visudo
 #Descomentar linha do wheel
