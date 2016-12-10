@@ -68,6 +68,6 @@ vim /boot/loader/entries/arch.conf
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options root=PARTUUID=<UUID_inside_the_file>
+options root=PARTUUID=<UUID_inside_the_file> rw
 reboot
 #Install drivers and the GUI
