@@ -1,7 +1,18 @@
 #Logar na instalação em modo UEFI
 run efivar -l
 #Espera-se que sejam listadas as variáveis de UEFI
-#TO-DO PARTIÇÕES
+#PARTIÇÕES
+gdisk /dev/sdX
+x, z, y, y
+cgdisk /dev/sdX
+#Choose new option and create the partions below
+Partition type = EF00 - /boot
+Partition type = 8200 - /swap
+Partition type = 8300 - /
+Partition type = 8300 - /home
+#Choose write option and confirm. After quit cgdisk
+reboot
+#Setar teclado para pt-br
 loadkeys br-abnt2
 vim /etc/locale.gen
 #Descomentar as linhas en_US.UTF-8 UTF-8 e pt_BR.UTF-8 UTF-8
