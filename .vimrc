@@ -190,7 +190,7 @@ set smarttab
 
 " Colors configs.
 set background=dark
-colorscheme monokai " Put the monokai.vim file in .vim/color
+colorscheme monokai " Put the monokai.vim file in .vim/colors
 set t_Co=256
 
 " Set numbers in lines of file.
@@ -230,14 +230,6 @@ let g:startify_custom_header = [
   \ '                  |VVV/+++++++++',
   \ '                   V/   ++++++',
   \ '                           ++',
-  \ '                                _________  __  __',
-  \ '            __                 /\_____   \/\ \/\ `\',
-  \ '   __   __ /\_\    ___ ___     \/____/   /\ \ \ \  \',
-  \ '  /\ \ /\ \\/\ \ /` __` __`\        /   /  \ \ \_\  \__',
-  \ '  \ \ \_/ / \ \ \/\ \/\ \/\ \      /   / __ \ \___   __\',
-  \ '   \ \___/   \ \_\ \_\ \_\ \_\    /\__/ /\_\ \/___/\_\_/',
-  \ '    \/__/     \/_/\/_/\/_/\/_/    \/_/  \/_/      \/_/',
-  \ '',
   \ '  ======================================================',
   \ ]
 
