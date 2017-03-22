@@ -42,7 +42,7 @@ echo LANG=pt_BR.UTF-8 > /etc/locale.conf
 export LANG=pt_BR.UTF-8
 vim /etc/vconsole.conf
 #Inserir
-KEYMAP=br-abnt2
+KEYMAP="br-abnt2"
 ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc --utc
 echo <computers_name> > /etc/hostname
@@ -57,6 +57,7 @@ passwd
 useradd -m -g users -G wheel,storage,power -s /bin/bash <username>
 passwd <username>
 ip link
+#Pegue a interface que esta com status UP
 sudo systemctl enable dhcpcd@<internet_device>.service
 EDITOR=vim visudo
 #Descomentar linha do wheel
@@ -71,5 +72,17 @@ linux /vmlinuz-linux
 initrd /intel-ucode.img
 initrd /initramfs-linux.img
 options root=PARTUUID=<UUID_inside_the_file> rw
+exit
 reboot
-#Install drivers and the GUI
+# Entre no sistema pelo HD
+#Instalar drivers and the GUI
+sudo pacman -S xorg-server xorg-server-utils xorg-xinit xorg-twm xorg-xclock xterm
+sudo pacman -S xf86-video-intel mesa-libgl lib32-mesa-libgl
+sudo pacman -S gnome gdm yaourt
+sudo pacman -S gnome-tweak-tool
+yaourt -S gnome-software
+reboot
+
+sudo systemctl disable dhcpcd@<internet_device>.service
+sudo systemctl enable NetworkManager.service
+sudo systemctl start NetworkManager.service
