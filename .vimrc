@@ -10,7 +10,6 @@ Plug 'junegunn/vim-plug'
 
 " A plugin which allows you to use <Tab> for all your insert completion needs
 Plug 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " A file-type sensible comments for Vim.
 Plug 'tomtom/tcomment_vim'
@@ -22,8 +21,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 
 " A code-completion engine for Vim
-" Plug 'Valloric/YouCompleteMe'
-" let g:ycm_autoclose_preview_window_after_completion = 1
+Plug 'Valloric/YouCompleteMe'
+let g:ycm_autoclose_preview_window_after_completion = 1
 " let g:ycm_global_ycm_extra_conf ='~/.ycm_extra_conf.py'
 " let g:loaded_youcompleteme = 1
 
@@ -33,6 +32,21 @@ Plug 'tpope/vim-fugitive'
 
 " A plugin to auto close brackets
 Plug 'jiangmiao/auto-pairs'
+
+" Track the engine for snippets
+Plug 'SirVer/ultisnips'
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" Snippets are separated from the engine.
+Plug 'honza/vim-snippets'
 
 " A plugin to auto complete based in cache of words in buffer.
 " Plug 'Shougo/neocomplete.vim'
@@ -67,6 +81,9 @@ Plug 'bronson/vim-trailing-whitespace'
 
 " Additional vim c++ syntax highlighting.
 Plug 'octol/vim-cpp-enhanced-highlight'
+
+" Ember Handlebars/HTMLBars syntax highlighting and indentation to Vim
+Plug 'joukevandermaas/vim-ember-hbs'
 
 " Syntax checking plugin for Vim.
 " Plug 'scrooloose/syntastic'
@@ -212,6 +229,9 @@ map <F3> mzgg=G`z
 
 "Remove all trailing whitespace by pressing F4.
 nnoremap <F4> :let s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=s<Bar><CR>
+
+"Reload file
+map <F5> :e!<CR>
 
 let g:startify_custom_header = [
   \ '  ======================================================',
