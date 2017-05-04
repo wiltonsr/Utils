@@ -11,6 +11,9 @@ Plug 'junegunn/vim-plug'
 " A plugin which allows you to use <Tab> for all your insert completion needs
 Plug 'ervandew/supertab'
 
+" HTML5 + inline SVG omnicomplete function, indent and syntax for Vim
+Plug 'othree/html5.vim'
+
 " A file-type sensible comments for Vim.
 Plug 'tomtom/tcomment_vim'
 
@@ -81,6 +84,9 @@ Plug 'bronson/vim-trailing-whitespace'
 
 " Additional vim c++ syntax highlighting.
 Plug 'octol/vim-cpp-enhanced-highlight'
+
+" Additional vim python syntax highlighting.
+Plug 'hdima/python-syntax'
 
 " Ember Handlebars/HTMLBars syntax highlighting and indentation to Vim
 Plug 'joukevandermaas/vim-ember-hbs'
