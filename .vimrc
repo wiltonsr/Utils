@@ -73,6 +73,9 @@ Plug 'mhinz/vim-startify'
 " This plugin causes all trailing whitespace to be highlighted in red.
 Plug 'bronson/vim-trailing-whitespace'
 
+" This plugin provides support for writing LaTeX documents.
+Plug 'lervag/vimtex'
+
 " A plugin that provides support for writing LaTeX documents.
 " Plug 'lervag/vimtex'
 
@@ -213,7 +216,7 @@ set smarttab
 
 " Colors configs.
 set background=dark
-colorscheme monokai " Put the monokai.vim file in .vim/colors
+colorscheme molokai " Put the monokai.vim file in .vim/colors
 set t_Co=256
 
 " Set numbers in lines of file.
