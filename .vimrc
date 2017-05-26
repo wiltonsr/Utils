@@ -242,6 +242,15 @@ nnoremap <F4> :let s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=s<Bar><CR>
 "Reload file
 map <F5> :e!<CR>
 
+" Enable the use of spell checker.
+map <F6> :set spell spelllang=pt<CR>
+" z= Show words suggestions.
+" zg Add the word to dict.
+
+" Disable the use of spell checker.
+map <F7> :set nospell<CR>
+
+" Startify plugin
 let g:startify_custom_header = [
   \ '  ======================================================',
   \ '                  ________ ++     ________',
