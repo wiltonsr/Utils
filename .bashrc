@@ -34,6 +34,7 @@ if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
 #----------------ALIAS----------------#
 alias bd='cd "$OLDPWD"'
 alias htop='sudo htop'
+alias minidlnad='minidlnad -R'
 alias go_unb='cd /home/wilton/Dropbox/UnB'
 alias workspace='cd /home/wilton/Workspace'
 alias gpu-is-on='cat /proc/acpi/bbswitch'
