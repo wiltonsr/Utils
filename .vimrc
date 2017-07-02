@@ -88,6 +88,9 @@ Plug 'lervag/vimtex'
 " Additional vim c++ syntax highlighting.
 Plug 'octol/vim-cpp-enhanced-highlight'
 
+" Additional vim nginx.conf syntax highlighting.
+Plug 'evanmiller/nginx-vim-syntax'
+
 " Additional vim python syntax highlighting.
 Plug 'hdima/python-syntax'
 
