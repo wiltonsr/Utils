@@ -81,6 +81,8 @@ sudo pacman -S xf86-video-intel mesa-libgl lib32-mesa-libgl
 sudo pacman -S gnome gdm yaourt
 sudo pacman -S gnome-tweak-tool
 yaourt -S gnome-software
+sudo pacman -S bluez blueman bluez-utils
+modprobe btusb
 reboot
 
 sudo systemctl disable dhcpcd@<internet_device>.service
