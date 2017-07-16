@@ -73,6 +73,12 @@ Plug 'mhinz/vim-startify'
 " This plugin causes all trailing whitespace to be highlighted in red.
 Plug 'bronson/vim-trailing-whitespace'
 
+" This plugin provides higlighted for nginx confs
+Plug 'evanmiller/nginx-vim-syntax'
+
+" This plugin provides higlighted and syntax for ansible, yaml and jinja2
+Plug 'pearofducks/ansible-vim'
+
 " This plugin provides support for writing LaTeX documents.
 Plug 'lervag/vimtex'
 
