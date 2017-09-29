@@ -11,6 +11,11 @@ Plug 'junegunn/vim-plug'
 " A plugin which allows you to use <Tab> for all your insert completion needs
 Plug 'ervandew/supertab'
 
+" A small Vim plugin for previewing markdown files in a browser using ctrl+p.
+Plug 'JamshedVesuna/vim-markdown-preview'
+" let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
+
 " HTML5 + inline SVG omnicomplete function, indent and syntax for Vim
 Plug 'othree/html5.vim'
 

@@ -48,7 +48,7 @@ alias reboot="sudo systemctl reboot"
 alias poweroff="sudo systemctl poweroff"
 alias suspend="sudo systemctl suspend"
 alias turnoff-monitor="xset -display :0.0 dpms force off"
-alias go="gnome-open"
+alias op="xdg-open"
 alias gs="git status"
 alias gb="git branch"
 alias gc="git commit"
@@ -65,8 +65,8 @@ BROWSER=/usr/bin/google-chrome-stable
 EDITOR=vim
 
 #Setting more line to history commands
-HISTSIZE=5000
-HISTFILESIZE=5000
+HISTSIZE=500000
+HISTFILESIZE=500000
 
 #Avoid duplicate entries in history
 export HISTCONTROL=ignoreboth:erasedups
@@ -101,3 +101,7 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 export EDITOR=vim
+
+if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  exec startx
+fi
