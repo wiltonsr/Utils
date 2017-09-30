@@ -179,6 +179,8 @@ mode "$mode_system" {
 bindsym $mod+BackSpace mode "$mode_system"
 
 bar {
+        bindsym button4 exec amixer -D pulse sset Master 2%+
+        bindsym button5 exec amixer -D pulse sset Master 2%-
         status_command i3status
         # status_command i3blocks
         font pango:DejaVu Sans Mono, Icons 10
