@@ -38,8 +38,9 @@ fi
 # xterm -geometry 80x20+494-0 &
 feh --bg-scale Dropbox/Imagens/saitama.png &
 numlockx &
-dropbox start &
-xautolock -time 10 -locker "i3lock-fancy" &
-conky &
+# dropbox start &
+# clipit &
+# xautolock -time 10 -locker "i3lock-fancy" &
+# conky &
 exec i3
 # exec xterm -geometry 80x66+0+0 -name login

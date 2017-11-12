@@ -29,7 +29,9 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminator
+# bindsym $mod+Return exec deepin-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -106,6 +108,13 @@ set $w8 8
 set $w9 9
 set $w0 "10: Músicas"
 
+# assign Workspaces:
+assign [class="Terminal"] $w1
+assign [class="WWW"] $w2
+assign [class="Rambox"] $w3
+assign [class="Arquivos"] $w4
+assign [class="Musicas"] $w0
+
 # switch to workspace
 bindsym $mod+1 workspace $w1
 bindsym $mod+2 workspace $w2
@@ -119,10 +128,9 @@ bindsym $mod+9 workspace $w9
 bindsym $mod+0 workspace $w0
 
 # start applications
-# exec --no-startup-id i3-msg 'workspace 1: Terminal; exec /usr/bin/terminator'
-# exec --no-startup-id i3-msg 'workspace 2: WWW; exec /usr/bin/vivaldi-stable'
-# exec --no-startup-id i3-msg 'workspace 3: Rambox; exec /usr/bin/rambox'
-# exec --no-startup-id i3-msg 'workspace 4: Arquivos; exec /usr/bin/nautilus'
+# for_window [class="Musicas"] exec /usr/bin/vivaldi-stable
+# exec --no-startup-id i3-msg 'workspace $w3; exec /usr/bin/rambox'
+# exec --no-startup-id i3-msg 'workspace $w4; exec /usr/bin/nautilus'
 
 # move focused container to workspace and change to selected workspace
 bindsym $mod+Shift+1 move container to workspace $w1; workspace $w1
