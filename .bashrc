@@ -10,23 +10,27 @@ shopt -s checkwinsize
 
 # Causes bash to append to history instead of overwriting it so if you start a new terminal, you have old session history
 shopt -s histappend
-PROMPT_COMMAND='history -a'
+PROMPT_COMMAND=my_ps1
 
 # My personality PS1 variable
 function my_ps1(){
+    local EXIT="$?"             # This needs to be first
     PS1=""
     local red='\[\e[0;31m\]'
     local gre='\[\033[38;5;10m\]'
     local whi='\[\e[0;37m\]'
-    local exit_status="${whi}[$?]"
+    local blu='\[\e[1;34m\]'
+    if [ $EXIT != 0 ]; then
+      local exit_status="[${red}$EXIT${whi}]"
+    else
+      local exit_status="[${gre}$EXIT${whi}]"
+    fi
     local user_and_host="${whi}[${gre}\u@\h${whi}]"
-    local current_path="${whi}\w"
+    local current_path="${blu}\w"
     local final_simbol="${whi}\$"
     local break_line='\n'
     export PS1+="${exit_status}${user_and_host}${current_path}${break_line}${final_simbol} "
-    # echo $PS1
 }
-my_ps1
 
 # Ignore case on auto-completion
 if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
