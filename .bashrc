@@ -10,7 +10,11 @@ shopt -s checkwinsize
 
 # Causes bash to append to history instead of overwriting it so if you start a new terminal, you have old session history
 shopt -s histappend
-PROMPT_COMMAND=my_ps1
+
+PROMPT_COMMAND="my_ps1; history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+
+#Avoid duplicate entries in history
+export HISTCONTROL=ignoreboth:erasedups
 
 # My personality PS1 variable
 function my_ps1(){
@@ -71,9 +75,6 @@ EDITOR=vim
 #Setting more line to history commands
 HISTSIZE=500000
 HISTFILESIZE=500000
-
-#Avoid duplicate entries in history
-export HISTCONTROL=ignoreboth:erasedups
 
 #Set partial history search with up key
 bind '"\e[A": history-search-backward'
