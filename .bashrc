@@ -11,7 +11,7 @@ shopt -s checkwinsize
 # Causes bash to append to history instead of overwriting it so if you start a new terminal, you have old session history
 shopt -s histappend
 
-PROMPT_COMMAND="my_ps1; history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+PROMPT_COMMAND="my_ps1; history -n; history -w; history -c; history -r;"
 
 #Avoid duplicate entries in history
 export HISTCONTROL=ignoreboth:erasedups
