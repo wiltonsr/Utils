@@ -24,17 +24,28 @@ function my_ps1(){
     local gre='\[\033[38;5;10m\]'
     local whi='\[\e[0;37m\]'
     local blu='\[\e[1;34m\]'
+
     if [ $EXIT != 0 ]; then
       local exit_status="[${red}$EXIT${whi}]"
     else
       local exit_status="[${gre}$EXIT${whi}]"
     fi
+
     local user_and_host="${whi}[${gre}\u@\h${whi}]"
     local current_path="${blu}\w"
-    local final_simbol="${whi}\$"
+
+    if [[ ${USER} == "root" ]]; then
+      local final_simbol="${red}#" # User is root.
+    elif [[ ${USER} != $(logname) ]]; then
+      local final_simbol="${blu}\$" # User is not login user.
+    else
+      local final_simbol="${whi}\$" # User is normal (well ... most of us are).
+    fi
+
     local break_line='\n'
-    export PS1+="${exit_status}${user_and_host}${current_path}${break_line}${final_simbol} "
+    export PS1+="${exit_status}${user_and_host}${current_path}${break_line}${final_simbol}${whi} "
 }
+
 
 # Ignore case on auto-completion
 if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
