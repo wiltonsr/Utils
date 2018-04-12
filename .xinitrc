@@ -39,8 +39,9 @@ fi
 feh --bg-scale Dropbox/Imagens/saitama.png &
 numlockx &
 # dropbox start &
-# clipit &
-# xautolock -time 10 -locker "i3lock-fancy" &
-# conky &
+clipit &
+xautolock -time 10 -locker "i3lock-fancy" &
+conky &
 exec i3
+#exec gnome-session
 # exec xterm -geometry 80x66+0+0 -name login

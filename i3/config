@@ -44,6 +44,8 @@ bindsym $mod+Shift+q kill
 # installed.
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
 
+exec_always --no-startup-id nm-applet
+
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # change focus
@@ -105,15 +107,14 @@ set $w5 5
 set $w6 6
 set $w7 7
 set $w8 8
-set $w9 9
+set $w9 "9: qBitTorrent"
 set $w0 "10: Músicas"
 
 # assign Workspaces:
-assign [class="Terminal"] $w1
-assign [class="WWW"] $w2
+assign [class="Google-chrome"] $w2
 assign [class="Rambox"] $w3
-assign [class="Arquivos"] $w4
-assign [class="Musicas"] $w0
+assign [class="qBittorrent"] $w9
+assign [class="spotify"] $w0
 
 # switch to workspace
 bindsym $mod+1 workspace $w1
@@ -129,8 +130,10 @@ bindsym $mod+0 workspace $w0
 
 # start applications
 # for_window [class="Musicas"] exec /usr/bin/vivaldi-stable
-# exec --no-startup-id i3-msg 'workspace $w3; exec /usr/bin/rambox'
+exec --no-startup-id i3-msg 'workspace $w1; exec /usr/bin/terminator;'
+exec --no-startup-id i3-msg 'workspace $w3; exec /usr/bin/rambox;'
 # exec --no-startup-id i3-msg 'workspace $w4; exec /usr/bin/nautilus'
+exec --no-startup-id i3-msg 'workspace $w9; exec /usr/bin/qbittorrent'
 
 # move focused container to workspace and change to selected workspace
 bindsym $mod+Shift+1 move container to workspace $w1; workspace $w1
@@ -199,6 +202,25 @@ mode "$mode_system" {
 }
 
 bindsym $mod+BackSpace mode "$mode_system"
+
+## Manual management of external displays
+# Set the shortcuts and what they do
+set $mode_display Screen Mode (v) VGA - L, (h) HDMI - L, (x) VGA - R, (y) HDMI - R, (s) VGA = HDMI, (g) VGA OFF, (f) HDMI OFF
+mode "$mode_display" {
+    bindsym v exec --no-startup-id xrandr --output eDP-1 --auto --left-of HDMI-1, mode "default"
+    bindsym h exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1, mode "default"
+    bindsym x exec --no-startup-id xrandr --output eDP-1 --auto --right-of HDMI-1, mode "default"
+    bindsym y exec --no-startup-id xrandr --output HDMI-1 --auto --right-of eDP-1, mode "default"
+    bindsym s exec --no-startup-id xrandr --output HDMI-1 --auto --same-as eDP-1, mode "default"
+    bindsym g exec --no-startup-id xrandr --output eDP-1 --auto --off --output HDMI-1 --auto, mode "default"
+    bindsym f exec --no-startup-id xrandr --output HDMI-1 --auto --off --output eDP-1 --auto, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Declare here the shortcut to bring the display selection menu
+bindsym $mod+x mode "$mode_display"
 
 # print screen
 bindsym Print exec spectacle
