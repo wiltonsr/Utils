@@ -120,7 +120,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 " Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
+set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store
 let NERDTreeRespectWildIgnore=1
 
 call plug#end() " required
